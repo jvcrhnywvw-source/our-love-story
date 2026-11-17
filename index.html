@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batty ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #873653;
+  background: linear-gradient(135deg,#ffe0ec,#f5e2ff,#fff5f8);
+  min-height: 100vh;
+  padding: 20px;
+}
+.card {
+  max-width: 600px;
+  margin: 35px auto;
+  padding: 28px 20px;
+  background: rgba(255,255,255,.9);
+  border-radius: 28px;
+  box-shadow: 0 8px 30px #d99bb8;
+}
+h1 { color: #e34f85; font-size: 38px; }
+h2 { color: #d65b91; }
+p { font-size: 19px; line-height: 2; }
+input {
+  padding: 13px;
+  border: 2px solid #efa4c1;
+  border-radius: 15px;
+  font-size: 17px;
+  text-align: center;
+  width: 85%;
+  margin: 10px;
+}
+button {
+  border: 0;
+  border-radius: 22px;
+  padding: 13px 25px;
+  color: white;
+  background: #e75480;
+  font-size: 17px;
+  cursor: pointer;
+}
+#content { display: none; }
+.photo {
+  height: 230px;
+  border: 3px dashed #e99bb9;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff1f6;
+  color: #c65a83;
+  font-size: 20px;
+  margin: 20px 0;
+}
+.heart { font-size: 28px; margin: 10px; }
+</style>
+</head>
+<body>
+
+<div class="card" id="lock">
+  <div class="heart">💗 💕 💗</div>
+  <h1>Batty ❤️</h1>
+  <p>أهلاً يا بطتي ❤️</p>
+  <p>اكتبي كلمة السر عشان تفتحي المفاجأة 🔐</p>
+  <input id="password" type="password" placeholder="Password">
+  <br>
+  <button onclick="unlock()">افتحي المفاجأة ❤️</button>
+  <p id="error" style="color:red"></p>
+</div>
+
+<div class="card" id="content">
+  <div class="heart">💗 💕 💖 💕 💗</div>
+  <h1>Batty ❤️</h1>
+  <h2>إلى بطتي الجميلة 🦋</h2>
+
+  <div class="photo">مكان صورتنا هنا 📷</div>
+
+  <h2>بطتي ❤️</h2>
+  <p>
+    وجودك في حياتي من أجمل الحاجات،
+    وكل لحظة حلوة بتفضل ذكرى جميلة.
+    أتمنى دايمًا تكون أيامنا مليانة فرحة وضحك وحب ❤️
+  </p>
+
+  <div class="heart">💞 💞 💞</div>
+
+  <h2>يوم 19 أبريل ❤️</h2>
+  <p>تاريخ مميز وذكرى غالية عندي.</p>
+  <h2 id="counter">❤️</h2>
+
+  <div class="heart">💗 💗 💗</div>
+
+  <h2>أغنيتنا 🎶</h2>
+  <p>مكان الأغنية اللي هنضيفها سوا ❤️</p>
+
+  <h2>بحبك يا بطتي ❤️</h2>
+  <p>ويا رب تفضل ذكرياتنا دايمًا حلوة 💗</p>
+  <div class="heart">💕 💖 💕</div>
+</div>
+
+<script>
+function unlock() {
+  const pass = document.getElementById("password").value;
+  if (pass === "Batty123") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    document.getElementById("error").textContent = "كلمة السر مش صحيحة ❤️";
+  }
+}
+
+const start = new Date("2026-04-19T00:00:00");
+const days = Math.floor((new Date() - start) / 86400000);
+document.getElementById("counter").textContent =
+  days >= 0 ? "عدّى " + days + " يوم ❤️" : "مستنيين يومنا ❤️";
+</script>
+
+</body>
+</html>
